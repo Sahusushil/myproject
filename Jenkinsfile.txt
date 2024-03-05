@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    
+    stages {
+        stage('Build') {
+            steps {
+               
+                git branch: 'main' , url : 'https://github.com/udayakumar99/maven_project.git'
+
+                sh 'mvn clean install'
+                sh 'java Demo.java '
+            }
+
+           
+            }
+        }
+    }
